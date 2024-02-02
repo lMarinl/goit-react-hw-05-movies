@@ -3,10 +3,10 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
 import { searchMovieRequest } from 'servises/API';
-import { STATUSES } from 'utils/Statuses';
+// import { STATUSES } from 'utils/Statuses';
 
 import { Form } from 'components/Form/Form';
-import { Loader } from 'components/Loader/Loader';
+// import { Loader } from 'components/Loader/Loader';
 import css from './MoviesPage.module.css';
 
 // import { MoviesList } from 'components/MoviesList/MoviesList';
