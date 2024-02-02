@@ -3,6 +3,8 @@ import { requestMovieReviews } from '../../servises/API';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import css from './Reviews.module.css';
+
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
@@ -28,20 +30,18 @@ const Reviews = () => {
   }, [movieId]);
 
   if (!movieId || reviews.length === 0) {
-    return <div>No reviews available</div>;
+    return <div className={css.noReviews}>There are no reviews yet</div>;
   }
 
   return (
-    <div>
-      <ul>
-        {reviews.map(review => (
-          <li key={review.id}>
-            <h3>{review.author}</h3>
-            <p>{review.content}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className={css.reviewsList}>
+      {reviews.map(review => (
+        <li className={css.reviewItem} key={review.id}>
+          <h3 className={css.reviewAuthor}>{review.author}</h3>
+          <p className={css.reviewContent}>{review.content}</p>
+        </li>
+      ))}
+    </ul>
   );
 };
 

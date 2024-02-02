@@ -1,0 +1,29 @@
+.homePageContainer {
+  background-color: #313131;
+  padding: 16px;
+}
+
+.title {
+  color: #fff;
+  font-size: 29px;
+  padding-bottom: 25px;
+}
+.moviesList {
+  text-decoration: none;
+}
+
+.movieItem {
+  margin-bottom: 14px;
+}
+.linkMovie {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 3px 2px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.linkMovie:hover {
+  color: #ff5100;
+  border-bottom: 1px solid #ff5100;
+}

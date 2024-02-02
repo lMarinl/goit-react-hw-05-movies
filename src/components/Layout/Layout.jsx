@@ -5,11 +5,11 @@ import css from './Layout.module.css';
 export const Layout = ({ children }) => {
   return (
     <>
-      <header>
-        <nav>
+      <header className={css.header}>
+        <nav className={css.headerNav}>
           <NavLink
             className={({ isActive }) =>
-              `${css.navlink} ${isActive ? css.active : ''}`
+              `${css.navLink} ${isActive ? css.active : ''}`
             }
             to="/"
           >
@@ -17,7 +17,7 @@ export const Layout = ({ children }) => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              `${css.navlink} ${isActive ? css.active : ''}`
+              `${css.navLink} ${isActive ? css.active : ''}`
             }
             to="/movies"
           >
@@ -26,7 +26,7 @@ export const Layout = ({ children }) => {
         </nav>
       </header>
       <main className={css.container}>{children}</main>
-      <footer></footer>
+      <footer className={css.footer}></footer>
     </>
   );
 };

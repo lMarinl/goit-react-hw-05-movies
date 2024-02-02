@@ -1,0 +1,85 @@
+.movieContainer {
+  background-color: #313131;
+}
+
+.movieDetailsContainer {
+  color: #fff;
+  padding: 20px;
+  display: flex;
+}
+
+.goBackLink {
+  padding: 10px;
+  min-width: 70px;
+  color: #fff;
+  /* border: 1px solid #ff5100; */
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 25px;
+  display: inline;
+  transition: color 0.3s ease, border 0.3s ease;
+}
+
+.goBackLink:hover {
+  color: #d24000;
+  /* border: 1px solid #d24000; */
+}
+
+.movieDescriptionContainer {
+  padding-top: 15px;
+  margin-left: 35px;
+}
+.moviePoster {
+  margin-bottom: 15px;
+  border-radius: 12px;
+}
+
+.movieTitle {
+  font-size: 29px;
+  margin-bottom: 35px;
+}
+
+.movieScore {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.movieOverviewTitle,
+.movieGenresTitle {
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.movieDetails,
+.movieGenres {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 1000px;
+  margin-bottom: 35px;
+}
+
+.additionalInformation {
+  margin-bottom: 30px;
+  margin-left: 135px;
+  font-size: 25px;
+  color: #fff;
+}
+
+.containerMenu {
+  padding-left: 120px;
+}
+.cast,
+.reviews {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 8px 14px;
+  transition: color 0.3s ease, border 0.3s ease;
+}
+
+.active {
+  color: #ff5100;
+  border-radius: 12px;
+  border: 1px solid #ff5100;
+}

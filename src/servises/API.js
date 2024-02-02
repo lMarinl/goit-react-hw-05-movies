@@ -23,8 +23,8 @@ export const searchMovieRequest = async searchTerm => {
   return response.data;
 };
 
-export const movieDetailsRequest = async id => {
-  const { data } = await axios.get(`${BASE_URL}/movie/${id}`);
+export const movieDetailsRequest = async movieId => {
+  const { data } = await axios.get(`${BASE_URL}/movie/${movieId}`);
   return data;
 };
 

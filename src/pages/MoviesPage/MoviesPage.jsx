@@ -32,6 +32,7 @@ const MoviesPage = () => {
     setSearchParams({
       sQuery: query,
     });
+    event.target.reset();
   };
 
   useEffect(() => {
@@ -41,28 +42,16 @@ const MoviesPage = () => {
   }, [query, fetchMovie]);
   return (
     <>
-      <Form handleSubmit={handleSubmit} query={query} />;
-      {/* <form className={css.formMovie} onSubmit={handleSubmit}>
-        <input
-          className={css.inputMovie}
-          type="text"
-          name="query"
-          defaultValue={query}
-          required
-        />
-        <button className={css.buttonMovie} type="submit">
-          Search
-        </button>
-      </form> */}
+      <Form handleSubmit={handleSubmit} query={query} />
       {query &&
       searchResult &&
       searchResult.results &&
       searchResult.results.length > 0 ? (
-        <ul>
+        <ul className={css.movieList}>
           {searchResult.results.map(movie => (
-            <li className={css.linkMovie} key={movie.id}>
+            <li className={css.movieItem} key={movie.id}>
               <Link
-                className={css.linkMovie}
+                className={css.movieLink}
                 state={{ from: location }}
                 to={`/movies/${movie.id}`}
               >
@@ -72,7 +61,7 @@ const MoviesPage = () => {
           ))}
         </ul>
       ) : (
-        query && <p>Sorry, no search results, please change your request.</p>
+        <div className={css.noResults}>No movie found for your request</div>
       )}
     </>
   );

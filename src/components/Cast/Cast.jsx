@@ -5,7 +5,7 @@ import { getProfileImg, requestMovieCast } from '../../servises/API';
 import { toast } from 'react-toastify';
 import css from './Cast.module.css';
 
- const Cast = () => {
+const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
 
@@ -25,17 +25,18 @@ import css from './Cast.module.css';
   }, [movieId]);
 
   return (
-    <div>
-      <ul className={css.list}>
+    <div className={css.castContainer}>
+      <ul className={css.castList}>
         {cast.map(cast => (
-          <li className={css.castStyle} key={cast.id}>
+          <li className={css.castItem} key={cast.id}>
             <img
+              className={css.actorProfile}
               src={getProfileImg(cast.profile_path)}
               alt={cast.name}
               width={150}
             />
-            <p>{cast.name}</p>
-            <p>Character: {cast.character}</p>
+            <p className={css.actorName}>{cast.name}</p>
+            <p className={css.role}>Character: {cast.character}</p>
           </li>
         ))}
       </ul>

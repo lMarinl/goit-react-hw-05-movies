@@ -1,0 +1,33 @@
+.movieList {
+  list-style: none;
+  padding-left: 20px;
+  background-color: #313131;
+  /* margin: 0; */
+}
+
+.movieItem {
+  padding: 15px;
+}
+
+.movieLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.movieLink:hover {
+  color: #ff5100;
+}
+
+.noResults {
+  /* position: fixed; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #313131;
+  font-size: 45px;
+  color: #fff;
+  z-index: 999;
+}

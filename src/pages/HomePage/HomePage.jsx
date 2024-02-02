@@ -6,7 +6,6 @@ import { STATUSES } from 'utils/Statuses';
 import { Loader } from 'components/Loader/Loader';
 
 import css from './HomePage.module.css';
-// import { MoviesList } from 'components/MoviesList/MoviesList';
 
 const HomePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -29,8 +28,8 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Trending today</h1>
+    <div className={css.homePageContainer}>
+      <h1 className={css.title}>Trending today</h1>
       {status === STATUSES.pending && <Loader />}
       {status === STATUSES.success && (
         <ul className={css.moviesList}>
