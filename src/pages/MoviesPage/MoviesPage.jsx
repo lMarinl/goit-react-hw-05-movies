@@ -3,16 +3,12 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
 import { searchMovieRequest } from 'servises/API';
-// import { STATUSES } from 'utils/Statuses';
 
 import { Form } from 'components/Form/Form';
-// import { Loader } from 'components/Loader/Loader';
+
 import css from './MoviesPage.module.css';
 
-// import { MoviesList } from 'components/MoviesList/MoviesList';
-
 const MoviesPage = () => {
-  // const [status, setStatus] = useState(STATUSES.idle);
   const [searchResult, setSearchResult] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -45,8 +41,19 @@ const MoviesPage = () => {
   }, [query, fetchMovie]);
   return (
     <>
-      <Form onSubmit={handleSubmit} query={query} />;
-      {/* {status === STATUSES.pending && <Loader />} */}
+      <Form handleSubmit={handleSubmit} query={query} />;
+      {/* <form className={css.formMovie} onSubmit={handleSubmit}>
+        <input
+          className={css.inputMovie}
+          type="text"
+          name="query"
+          defaultValue={query}
+          required
+        />
+        <button className={css.buttonMovie} type="submit">
+          Search
+        </button>
+      </form> */}
       {query &&
       searchResult &&
       searchResult.results &&
@@ -72,4 +79,3 @@ const MoviesPage = () => {
 };
 
 export default MoviesPage;
-// <MoviesList searchResult={searchResult} location={location} />

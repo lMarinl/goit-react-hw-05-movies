@@ -13,8 +13,6 @@ import { toast } from 'react-toastify';
 
 import { STATUSES } from 'utils/Statuses';
 
-// import { Cast } from 'components/Cast/Cast';
-// import { Reviews } from 'components/Reviews/Reviews';
 import { Loader } from 'components/Loader/Loader';
 import css from './MovieDetails.module.css';
 

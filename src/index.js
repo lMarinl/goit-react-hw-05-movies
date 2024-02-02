@@ -22,7 +22,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        // transition:Slide
         theme="dark"
       />
     </BrowserRouter>
