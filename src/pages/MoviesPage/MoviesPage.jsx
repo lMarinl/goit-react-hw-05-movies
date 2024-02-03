@@ -61,7 +61,9 @@ const MoviesPage = () => {
           ))}
         </ul>
       ) : (
-        <div className={css.noResults}>No movie found for your request</div>
+        query && (
+          <div className={css.noResults}>No movie found for your request</div>
+        )
       )}
     </>
   );

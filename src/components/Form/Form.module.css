@@ -1,7 +1,11 @@
-.formMovie {
+.formContainer {
+  width: 100%;
+  height: 100%;
   background-color: #313131;
+}
+
+.formMovie {
   padding: 30px;
-  display: flex;
   align-items: center;
 }
 
