@@ -7,12 +7,10 @@ import { searchMovieRequest } from 'servises/API';
 import { Form } from 'components/Form/Form';
 
 import css from './MoviesPage.module.css';
-import { STATUSES } from 'utils/Statuses';
 
 const MoviesPage = () => {
   const [searchResult, setSearchResult] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [status, setStatus] = useState([STATUSES.idle]);
 
   const location = useLocation();
 
@@ -20,10 +18,8 @@ const MoviesPage = () => {
 
   const fetchMovie = useCallback(async () => {
     try {
-      setStatus([STATUSES.pending]);
       const data = await searchMovieRequest(query);
       setSearchResult(data);
-      setStatus(STATUSES.success);
     } catch (error) {
       toast.error('MoviesPage');
     }
