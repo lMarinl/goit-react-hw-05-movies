@@ -7,19 +7,23 @@ import { searchMovieRequest } from 'servises/API';
 import { Form } from 'components/Form/Form';
 
 import css from './MoviesPage.module.css';
+import { STATUSES } from 'utils/Statuses';
 
 const MoviesPage = () => {
   const [searchResult, setSearchResult] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [status, setStatus] = useState([STATUSES.idle]);
 
   const location = useLocation();
 
-  const query = searchParams.get('sQuery');
+  const query = searchParams.get('sQuery') ?? '';
 
   const fetchMovie = useCallback(async () => {
     try {
+      setStatus([STATUSES.pending]);
       const data = await searchMovieRequest(query);
       setSearchResult(data);
+      setStatus(STATUSES.success);
     } catch (error) {
       toast.error('MoviesPage');
     }
@@ -27,12 +31,15 @@ const MoviesPage = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const query = event.target.query.value.toLowerCase().trim();
-    if (!query) return;
+
+    const form = event.currentTarget;
+    if (form.elements.query.value === '') {
+      return setSearchParams({});
+    }
     setSearchParams({
-      sQuery: query,
+      sQuery: form.elements.query.value.toLowerCase().trim(),
     });
-    event.target.reset();
+    form.reset();
   };
 
   useEffect(() => {
@@ -61,9 +68,7 @@ const MoviesPage = () => {
           ))}
         </ul>
       ) : (
-        query && (
-          <div className={css.noResults}>No movie found for your request</div>
-        )
+        <div className={css.noResults}>No movie found for your request</div>
       )}
     </>
   );
