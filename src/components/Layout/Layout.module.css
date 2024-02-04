@@ -1,14 +1,15 @@
 .header {
-  padding: 20px;
   width: 100%;
+  padding: 20px;
   background-color: #313131;
-  box-shadow: 0px 4px 12px rgba(236, 234, 234, 0.2);
   border-bottom: 1px solid #ff5100;
+  box-shadow: 0px 2px 1px #d94a08a8, 0px 1px 1px #c248107d,
+    0px 1px 6px #ad5b3556;
 }
 
 .headerNav {
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 .navLink {
@@ -26,3 +27,6 @@
 }
 .footer {
 }
+/* box-shadow: 0px 4px 12px rgba(236, 234, 234, 0.2); */
+/* border-bottom: 1px solid #ff5100;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.342); */

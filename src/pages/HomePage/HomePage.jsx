@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { requestTrendingMovies } from 'servises/API';
+import { getPoster, requestTrendingMovies } from 'servises/API';
 import { STATUSES } from 'utils/Statuses';
 import { Loader } from 'components/Loader/Loader';
 
@@ -35,6 +35,17 @@ const HomePage = () => {
         <ul className={css.moviesList}>
           {trendingMovies?.map(movie => (
             <li className={css.movieItem} key={movie.id}>
+              <Link state={{ from: location }} to={`/movies/${movie.id}`}>
+                {
+                  <img
+                    className={css.moviePoster}
+                    alt={movie.title || movie.name}
+                    src={getPoster(movie.poster_path)}
+                    width="280"
+                    height="420"
+                  ></img>
+                }
+              </Link>
               <Link
                 className={css.linkMovie}
                 state={{ from: location }}
